@@ -1,0 +1,49 @@
+
+@import "../../styles/index.scss";
+
+.header {
+    display: flex;
+    height: remB(100);
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #fff;
+
+    .title {
+        font-size: remF(28);
+    }
+
+    .back-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: remB(80);
+        height: 100%;
+    }
+
+    .back-icon {
+        // top: remB(50);
+        // left: remB(50);
+        // transform: translate(-50%,-50%);
+        @include flex-center();
+    }
+
+    .completed {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        position: absolute;
+        top: 0;
+        right: remB(20);
+        width: remB(80);
+        height: 100%;
+
+        .text {
+            @include flex-center();
+
+        }
+    }
+}

@@ -1,0 +1,20 @@
+@import '../../styles/index.scss';
+
+.next-step-btn {
+    background-color: #f43c59;
+    color: #fff;
+    height: remB(70);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: remF(28);
+    border-color: transparent;
+    border-radius: remB(50);
+}
+// .link-btn {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex: 1;
+// }
