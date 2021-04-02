@@ -8,11 +8,9 @@ import { setting } from './config';
 const App = () => {
     return (
         <Provider store={store}>
-            <ConfigProvider locale={zhCN}>
-                <Router basename={setting.prefix}>
-                    <Routes></Routes>
-                </Router>
-            </ConfigProvider>
+            <Router basename={setting.prefix}>
+                <Routes></Routes>
+            </Router>
         </Provider>
     );
 };

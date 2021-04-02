@@ -21,17 +21,36 @@ module.exports = {
     extends: [
         'eslint:recommended', // Use the recommended config for JavaScript.
         'plugin:prettier/recommended', // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
-        'plugin:react-hooks/recommended',
     ],
     rules: {
         'no-misleading-character-class': 'off',
-        // 为了兼容旧代码
         'no-unused-vars': 'off',
-        'no-debugger': 'off',
-        'no-useless-escape': 'off',
-        'no-empty': 'off',
-        'no-unreachable': 'off',
-        'react-hooks/rules-of-hooks': 'warn', // 检查 Hook 的规则
-        'react-hooks/exhaustive-deps': 'warn', // 检查 effect 的依赖
     },
+    overrides: [
+        {
+            files: ['**/*.tsx'],
+            parser: '@typescript-eslint/parser', // Specifies the ESLint parser
+            extends: [
+                'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin.
+                'plugin:prettier/recommended', // // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+            ],
+            parserOptions: {
+                ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features.
+                sourceType: 'module', // Allows for the use of imports.
+                ecmaFeatures: {
+                    modules: true,
+                },
+                project: './tsconfig.json',
+            },
+            plugins: ['@typescript-eslint'],
+            rules: {
+                // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs.
+                // e.g. "@typescript-eslint/explicit-function-return-type": "off",
+                '@typescript-eslint/explicit-function-return-type': 'off',
+                '@typescript-eslint/interface-name-prefix': 'off',
+                '@typescript-eslint/no-var-requires': 'off',
+                '@typescript-eslint/explicit-module-boundary-types': 'off',
+            },
+        },
+    ],
 };

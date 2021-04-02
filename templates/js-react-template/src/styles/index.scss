@@ -1,8 +1,4 @@
-
 $base: #f43c59;
-$desc: #9A9A9B;
-$confirm: #2A8FFE;
-$line-color: #EFEFEF;
 $bg-color: #FAFAF9;
 
 
@@ -27,9 +23,3 @@ $bg-color: #FAFAF9;
         flex-direction: $direction;
     }
 }
-
-@mixin desc-words($font-size: 20) {
-    font-size: remB($font-size);
-    color: $desc;
-}
-
