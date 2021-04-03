@@ -30,11 +30,14 @@
         "@typescript-eslint/eslint-plugin": "^4.20.0",
         "@typescript-eslint/parser": "^4.20.0",
         "babel-eslint": "^10.1.0",
+        "chalk": "^4.1.0",
         "eslint": "^7.23.0",
         "eslint-config-prettier": "^8.1.0",
         "eslint-plugin-prettier": "^3.3.1",
         "eslint-plugin-react-hooks": "^4.2.0",
-        "prettier": "^2.2.1"
+        "ora": "^5.4.0",
+        "prettier": "^2.2.1",
+        "which": "^2.0.2"
     },
     "dependencies": {
         "typescript": "^4.2.3"

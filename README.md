@@ -3,7 +3,7 @@
 ## 目标
 减少从0到1搭建项目的成本，快速开发项目
 
-在create-react-app脚手架基础上，增加redux + react-router + lint配置等常用从零构建项目所需的模板
+在create-react-app v4.0.3脚手架基础上，增加redux + react-router + lint配置等常用从零构建项目所需库的模板
 
 ### 提供cli环境，初定为提供以下功能
 - 一键快速创建views层组件
@@ -14,3 +14,8 @@
 - 提供typescript化模板支持（待定）
 - 自动安装所需要的@types文件，即便用户使用Javascript进行开发也能在Vscode IDE下得到函数提示支持
 - others...
+
+
+```
+ora spinning
+inquirer
