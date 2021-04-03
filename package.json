@@ -24,6 +24,11 @@
             "path": "node_modules/cz-conventional-changelog"
         }
     },
+    "dependencies": {
+        "commander": "^7.2.0",
+        "inquirer": "^8.0.0",
+        "typescript": "^4.2.3"
+    },
     "devDependencies": {
         "@commitlint/cli": "^12.1.1",
         "@commitlint/config-conventional": "^12.1.1",
@@ -38,8 +43,5 @@
         "ora": "^5.4.0",
         "prettier": "^2.2.1",
         "which": "^2.0.2"
-    },
-    "dependencies": {
-        "typescript": "^4.2.3"
     }
 }
