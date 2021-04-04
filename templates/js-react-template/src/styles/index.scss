@@ -1,25 +1,4 @@
-$base: #f43c59;
-$bg-color: #FAFAF9;
-
-
-/**
-  盒子px转rem
- */
-@function remB($px) {
-    @return ($px/75) * 1rem;
-}
-/**
-    字号px转rem
-   */
-@function remF($px) {
-    @return ($px/64) * 0.853333333rem;
-}
-
-@mixin flex-center($direction: row) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    @if $direction != row {
-        flex-direction: $direction;
-    }
-}
+@import "modules/variables";
+@import "modules/mixin";
+@import "modules/function";
+@import "modules/global";

@@ -1,1 +1,1 @@
-export * from './module/config';
+export * from './module/auth';

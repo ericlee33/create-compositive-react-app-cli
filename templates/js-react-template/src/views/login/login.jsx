@@ -1,7 +1,7 @@
 import styles from './login.module.scss';
 
-const BasicLayout = () => {
+const Login = ({}) => {
     return <div></div>;
 };
 
-export default BasicLayout;
+export default Login;

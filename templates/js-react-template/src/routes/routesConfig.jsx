@@ -1,15 +1,6 @@
-import Login from '../pages/login/login';
+import Login from '../views/login/login';
 
-const ValidatingRoutesList = [
-    {
-        path: '/start',
-        component: Login,
-        exact: true,
-    },
-];
-
-/** 不需要鉴权 */
-const NonValidatingRoutesList = [
+const routesConfig = [
     {
         path: '/login',
         component: Login,
@@ -17,4 +8,4 @@ const NonValidatingRoutesList = [
     },
 ];
 
-export { ValidatingRoutesList, NonValidatingRoutesList };
+export { routesConfig };

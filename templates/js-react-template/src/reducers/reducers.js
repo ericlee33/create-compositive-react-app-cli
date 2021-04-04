@@ -1,13 +1,9 @@
 import { combineReducers } from 'redux';
 
-import config from './module/config';
-import login from './module/login';
-import hasToken from './module/hasToken';
+import auth from './module/auth';
 
 const rootReducer = combineReducers({
-    config,
-    login,
-    hasToken,
+    auth,
 });
 
 export default rootReducer;
