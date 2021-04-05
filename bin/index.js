@@ -4,7 +4,7 @@ const program = require('commander');
 const prompts = require('../lib/create');
 
 program
-    .command('init <name>')
+    .command('create <name>')
     .description('create a new react project')
     .action(name => {
         prompts(name);
