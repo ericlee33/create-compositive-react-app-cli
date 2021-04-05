@@ -1,28 +1,10 @@
 {
     "name": "create-compositive-react-app-cli",
     "version": "0.0.3",
-    "description": "",
+    "description": "a compositive create-react-app cli",
     "main": "index.js",
-    "scripts": {
-        "node": "node index.js",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "commit": "git-cz"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ericlee33/create-compositive-react-app-cli.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/ericlee33/create-compositive-react-app-cli/issues"
-    },
-    "homepage": "https://github.com/ericlee33/create-compositive-react-app-cli#readme",
-    "config": {
-        "commitizen": {
-            "path": "node_modules/cz-conventional-changelog"
-        }
+    "bin": {
+        "ccra": "./bin/index.js"
     },
     "dependencies": {
         "commander": "^7.2.0",
@@ -43,5 +25,24 @@
         "eslint-plugin-react-hooks": "^4.2.0",
         "ora": "^5.4.0",
         "prettier": "^2.2.1"
+    },
+    "scripts": {
+        "commit": "git-cz"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ericlee33/create-compositive-react-app-cli.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ericlee33/create-compositive-react-app-cli/issues"
+    },
+    "homepage": "https://github.com/ericlee33/create-compositive-react-app-cli#readme",
+    "config": {
+        "commitizen": {
+            "path": "node_modules/cz-conventional-changelog"
+        }
     }
 }
