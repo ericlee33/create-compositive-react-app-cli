@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Switch, Route, Redirect, WithRouter } from 'react-router-dom';
 import { routesConfig } from './routesConfig';
 import { useEffect } from 'react';
@@ -19,16 +20,18 @@ const Routes = ({ location, history }) => {
     // }, [history?.location?.pathname]);
 
     return (
-        <Switch location={location}>
-            {routesConfig.map(route => (
-                <Route
-                    key={route.path}
-                    path={route.path}
-                    exact={route.exact}
-                    render={hasToken ? <route.component /> : <Redirect to="login" />}
-                ></Route>
-            ))}
-        </Switch>
+        <Router>
+            <Switch location={location}>
+                {routesConfig.map(route => (
+                    <Route
+                        key={route.path}
+                        path={route.path}
+                        exact={route.exact}
+                        render={hasToken ? <route.component /> : <Redirect to="login" />}
+                    ></Route>
+                ))}
+            </Switch>
+        </Router>
     );
 };
 

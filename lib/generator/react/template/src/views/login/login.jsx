@@ -1,6 +1,6 @@
 import styles from './login.module.scss';
 
-const Login = ({}) => {
+const Login = () => {
     return <div></div>;
 };
 

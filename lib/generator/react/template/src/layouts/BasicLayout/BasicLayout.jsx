@@ -1,4 +1,4 @@
-import styles from './login.module.scss';
+import styles from './BasicLayout.module.scss';
 
 const BasicLayout = () => {
     return <div></div>;
