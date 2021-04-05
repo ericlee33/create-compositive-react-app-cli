@@ -16,6 +16,7 @@
 - others...
 
 
+current issues:
 ```
-ora spinning
-inquirer
+react-redux还不能做到在App.js自动引入，需要Ast插入支持，下一期做
+react-router暂时只能选择history模式，需要模板渲染支持
