@@ -1,6 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { Switch, Route, Redirect, WithRouter } from 'react-router-dom';
+import {
+    Switch,
+    Route,
+    Redirect,
+    WithRouter,
+    <% if(routerMode){ %>BrowserRouter as Router<% } else{ %>HashRouter as Router<% } %>
+ } from 'react-router-dom';
 import { routesConfig } from './routesConfig';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';

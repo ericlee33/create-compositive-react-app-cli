@@ -8,15 +8,16 @@
 ### 提供cli环境，初定为提供以下功能
 - 一键快速创建views层组件
 - 一键快速创建components组件
-- 在create时，通过inquirer插件提供给用户各类可选项，可以根据用户所需配置，进行项目自动化构建。
+- 在create时，通过inquirer插件提供给用户各类可选项，可以根据用户所需配置，进行项目自动化构建。 done
     - 注：状态管理暂时仅提供redux模板
     - 路由管理提供react-router v5模板
-- 提供typescript化模板支持（待定）
-- 自动安装所需要的@types文件，即便用户使用Javascript进行开发也能在Vscode IDE下得到函数提示支持
+- 自动安装所需要的@types文件，即便用户使用Javascript进行开发也能在Vscode IDE下得到函数提示支持 done
 - others...
 
 
-current issues:
+以下功能正在谋划中
 ```
-react-redux还不能做到在App.js自动引入，需要Ast插入支持，下一期做
-react-router暂时只能选择history模式，需要模板渲染支持
+- react-redux还不能做到在App.js自动引入
+- 一键快速创建views层组件
+- 一键快速创建components组件
+
