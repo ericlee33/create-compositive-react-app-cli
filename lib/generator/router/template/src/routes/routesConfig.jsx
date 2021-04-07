@@ -1,4 +1,4 @@
-import Login from './views/login/login';
+import Login from '../views/login/login';
 
 const routesConfig = [
     {

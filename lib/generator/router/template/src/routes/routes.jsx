@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
     Switch,
     Route,
     Redirect,
-    WithRouter,
+    withRouter,
     <% if(routerMode){ %>BrowserRouter as Router<% } else{ %>HashRouter as Router<% } %>
  } from 'react-router-dom';
 import { routesConfig } from './routesConfig';
-import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 const Routes = ({ location, history }) => {
