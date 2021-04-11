@@ -16,7 +16,10 @@
 `npm i -g create-compositive-react-app-cli`
 `ccra init <your project name>`
 
-![init.gif](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c75963c534e64535afe2f46510bca13b~tplv-k3u1fbpfcp-watermark.image)
+<img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c75963c534e64535afe2f46510bca13b~tplv-k3u1fbpfcp-watermark.image">
+
+
+<img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ae972b5087ff4749a7c784aa274bdaa9~tplv-k3u1fbpfcp-watermark.image">
 
 ## Usage 使用方法
 ##### 快速搭建项目
