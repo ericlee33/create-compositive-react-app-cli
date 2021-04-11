@@ -1,6 +1,6 @@
 {
     "name": "create-compositive-react-app-cli",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "a compositive create-react-app cli",
     "main": "index.js",
     "bin": {
