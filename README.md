@@ -9,6 +9,14 @@
 - `Linter / Formatter` （目前提供了`Eslint + EditorConfig + Prettier + CommitLint`）
 
 完成模板创建后，自动安装依赖。
+## Getting started 快速使用
+- 推荐使用
+`npx create-compositive-react-app-cli init <your project name>`
+- 也可使用
+`npm i -g create-compositive-react-app-cli`
+`ccra init <your project name>`
+
+![init.gif](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c75963c534e64535afe2f46510bca13b~tplv-k3u1fbpfcp-watermark.image)
 
 ## Usage 使用方法
 ##### 快速搭建项目
