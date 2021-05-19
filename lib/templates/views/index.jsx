@@ -1,7 +1,5 @@
 import styles from './widget.module.scss';
 
-const PageContainer = () => {
+export default () => {
     return <div></div>;
 };
-
-export default PageContainer;

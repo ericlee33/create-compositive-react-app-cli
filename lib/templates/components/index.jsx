@@ -1,7 +1,5 @@
 import styles from './widget.module.scss';
 
-const Widget = () => {
+export default () => {
     return <div></div>;
 };
-
-export default Widget;

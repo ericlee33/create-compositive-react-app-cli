@@ -14,10 +14,11 @@ const Routes = () => {
                         path={route.path}
                         exact={route.exact}
                         <% if(needRedux){ %>render={props =>
-                            hasToken ? <route.component {...props} /> : <Redirect to="login" />
+                            hasToken ? <route.component {...props} /> : <Redirect to="/login" />
                         }<% } else{ %>render={props => <route.component {...props} />}<% } %>
                     ></Route>
                 ))}
+                <Redirect to="/login" />
             </Switch>
         </Router>
     );
