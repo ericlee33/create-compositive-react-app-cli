@@ -1,9 +1,8 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import colors from './utils/chalk';
+import { isObject, success, error } from './utils';
 import { copyTemplate } from './utils/copyDir';
-import isObject from './utils/isObject';
 
 class Generator {
   pkg: Record<string, any>;
@@ -33,7 +32,7 @@ class Generator {
   generate(isStart, name) {
     if (isStart) {
       // let spinner = ora('Start creating-react-app').start();
-      colors.green('Start creating project');
+      success('Start creating project');
 
       const pkg = JSON.stringify(this.pkg, null, 4);
 
@@ -42,10 +41,10 @@ class Generator {
           return this.writePkg(pkg, name);
         })
         .then(() => {
-          colors.green('Create template successfully!');
+          success('Create template successfully!');
         })
         .catch(err => {
-          colors.red(`Create fail, the reason is: ${err}`);
+          error(`Create fail, the reason is: ${err}`);
         });
       // .finally(() => spinner.stop());
     }

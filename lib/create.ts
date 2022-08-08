@@ -8,7 +8,7 @@ import Generator from './Generator';
 import getPromptModules from './getPromptModules';
 import PromptModuleAPI from './PromptModuleAPI';
 import createTemplate from './templates/createTemplate';
-import colors from './utils/chalk';
+import { info, log } from './utils';
 import executeCommand from './utils/executeCommand';
 
 async function createApp(name: string) {
@@ -51,12 +51,12 @@ async function createApp(name: string) {
 
   await generator.generate(answers.start, name);
 
-  colors.yellow(`Start installing dependencies`);
+  info(`Start installing dependencies`);
 
   await executeCommand('git', ['init'], path.join(process.cwd(), name));
   await executeCommand('npm', ['install'], path.join(process.cwd(), name));
 
-  colors.green(
+  log(
     `\nInstall successfully! Now, you can print \`cd ${name}\` in bash \nthen \`npm run dev\` to start your react project!\n`,
   );
 }

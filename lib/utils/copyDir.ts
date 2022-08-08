@@ -3,7 +3,7 @@ import * as path from 'path';
 
 import * as ejs from 'ejs';
 
-import colors from './chalk';
+import { error, info } from './log';
 
 let flat = 0; // copyDir 函数数量
 let fileCount = 0; // 文件数量
@@ -62,7 +62,7 @@ function copyDir(
                 );
                 p = parsedPath.base.replace('index', name);
               }
-              colors.yellow(`Creating template: ${p}`);
+              info(`Creating template: ${p}`);
               fs.writeFileSync(fullCurrentDir, renderedTemplate);
 
               fileCount--;
@@ -112,7 +112,7 @@ export function copyTemplate(sourcesConfig, name, isTemplate?: boolean) {
             ),
           );
         })
-        .catch(err => colors.red(err));
+        .catch(err => error(err));
     } catch (err) {
       console.error(`An error occurs, the reason is: ${err}`);
     }

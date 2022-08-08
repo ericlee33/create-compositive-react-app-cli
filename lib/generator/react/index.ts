@@ -2,7 +2,7 @@ import * as path from 'path';
 export default (
   generator,
   options = {
-    features: [],
+    features: [] as string[],
     routerMode: false,
   },
   name,
@@ -39,7 +39,7 @@ export default (
     },
   });
 
-  const fullPath = path.join(__dirname, './template');
+  const fullPath = path.resolve(__dirname, '../../templates/react');
 
   generator.render({
     fullPath,
