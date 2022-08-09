@@ -39,7 +39,7 @@ export default (
     },
   });
 
-  const fullPath = path.resolve(__dirname, '../../templates/react');
+  const fullPath = path.resolve(__dirname, '../../../templates/react');
 
   generator.render({
     fullPath,

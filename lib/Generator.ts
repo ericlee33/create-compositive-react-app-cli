@@ -1,7 +1,9 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { isObject, success, error } from './utils';
+import { merge } from 'lodash';
+
+import { success, error } from './utils';
 import { copyTemplate } from './utils/copyDir';
 
 class Generator {
@@ -13,20 +15,7 @@ class Generator {
   }
 
   extendPackage(fields) {
-    const pkg = this.pkg;
-
-    for (const key in fields) {
-      const value = fields[key];
-
-      if (isObject(value)) {
-        pkg[key]
-          ? (pkg[key] = {
-              ...pkg[key],
-              ...value,
-            })
-          : (pkg[key] = value);
-      }
-    }
+    this.pkg = merge(this.pkg, fields);
   }
 
   generate(isStart, name) {
@@ -34,10 +23,10 @@ class Generator {
       // let spinner = ora('Start creating-react-app').start();
       success('Start creating project');
 
-      const pkg = JSON.stringify(this.pkg, null, 4);
+      const pkg = JSON.stringify(this.pkg, null, 2);
 
       return copyTemplate(this.sources, name)
-        .then(res => {
+        .then(() => {
           return this.writePkg(pkg, name);
         })
         .then(() => {
@@ -52,7 +41,7 @@ class Generator {
 
   writePkg(pkg, name) {
     return new Promise<void>((resolve, reject) => {
-      const pkgPath = path.join(process.cwd(), name, `./package.json`);
+      const pkgPath = path.resolve(process.cwd(), name, `./package.json`);
 
       fs.writeFile(pkgPath, pkg, err => (err ? reject(`Write package.json failed`) : resolve()));
     });

@@ -43,11 +43,11 @@ async function createApp(name: string) {
 
   answers.features = ['react', ...answers.features];
 
-  answers.features.forEach(async feature => {
+  for (const feature of answers.features) {
     const func = await import(`./generator/${feature}`);
 
-    func(generator, answers, name);
-  });
+    await func.default(generator, answers, name);
+  }
 
   await generator.generate(answers.start, name);
 
