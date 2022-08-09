@@ -53,8 +53,8 @@ async function createApp(name: string) {
 
   info(`Start installing dependencies`);
 
-  await executeCommand('git', ['init'], path.join(process.cwd(), name));
-  await executeCommand('npm', ['install'], path.join(process.cwd(), name));
+  await executeCommand('git', ['init'], path.resolve(process.cwd(), name));
+  await executeCommand('npm', ['install'], path.resolve(process.cwd(), name));
 
   log(
     `\nInstall successfully! Now, you can print \`cd ${name}\` in bash \nthen \`npm run dev\` to start your react project!\n`,

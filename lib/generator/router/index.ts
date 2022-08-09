@@ -8,7 +8,7 @@ export default (generator, options) => {
     dependencies,
   });
 
-  const fullPath = path.join(__dirname, './template');
+  const fullPath = path.resolve(__dirname, '../../../templates/router');
 
   generator.render({
     fullPath,

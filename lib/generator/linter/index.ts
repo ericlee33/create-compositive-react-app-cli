@@ -30,7 +30,7 @@ export default generator => {
     },
   });
 
-  const fullPath = path.join(__dirname, './template');
+  const fullPath = path.resolve(__dirname, '../../../templates/linter');
 
   generator.render({ fullPath });
 };
