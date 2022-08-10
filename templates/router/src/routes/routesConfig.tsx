@@ -1,11 +1,11 @@
-import Login from '../views/login/login';
+import { lazy } from 'react';
 
 const routesConfig = [
   {
-    path: '/login',
-    component: Login,
+    path: '/index',
+    component: lazy(() => import('./Index/index')),
     exact: true,
   },
 ];
 
-export { routesConfig };
+export default routesConfig;

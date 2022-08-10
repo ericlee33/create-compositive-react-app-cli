@@ -1,26 +1,28 @@
-import React, { useEffect } from 'react';
-import { Switch, Route, Redirect, <% if(routerMode){ %>BrowserRouter as Router<% } else{ %>HashRouter as Router<% } %> } from 'react-router-dom';
-import { routesConfig } from './routesConfig';
+import React, { lazy, Suspense } from 'react';
+import { Switch, Route, Redirect, BrowserRouter as Router } from 'react-router-dom';
+import routesConfig from './routesConfig';
 import { useSelector } from 'react-redux';
 
 const Routes = () => {
-    <% if(needRedux){ %>let hasToken = useSelector(state => state.hasToken);<% } %>
-    return (
+  const hasToken = useSelector(state => state.hasToken);
+  return (
+    <Suspense fallback={<span>Loading...</span>}>
       <Router>
         <Switch>
-            {routesConfig.map(route => (
-                <Route
-                    key={route.path}
-                    path={route.path}
-                    exact={route.exact}
-                    <% if(needRedux){ %>render={props =>
-                        hasToken ? <route.component {...props} /> : <Redirect to="/login" />
-                    }<% } else{ %>render={props => <route.component {...props} />}<% } %>
-                ></Route>
+          {hasToken &&
+            routesConfig.map(route => (
+              <Route
+                key={route.path}
+                path={route.path}
+                exact={route.exact}
+                component={route.component}
+              ></Route>
             ))}
-            <Redirect to="/login" />
+          <Route path="/login" exact component={lazy(() => import('./Login'))} />
+          <Redirect to="/login" />
         </Switch>
-    </Router>
+      </Router>
+    </Suspense>
   );
 };
 

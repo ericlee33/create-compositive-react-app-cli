@@ -11,14 +11,15 @@ export default (
     react: '^17.0.1',
     'react-dom': '^17.0.1',
     'react-scripts': '4.0.3',
+    'styled-components': '^5',
   };
 
   const devDependencies = {
     '@types/react': '^17.0.3',
     '@types/react-dom': '^17.0.3',
+    '@types/styled-components': '^5',
     'sass-loader': '^11.0.1',
     'node-sass': '^5.0.0',
-    'styled-components': '^5',
   };
 
   generator.extendPackage({
