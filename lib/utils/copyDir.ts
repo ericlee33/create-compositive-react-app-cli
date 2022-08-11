@@ -3,7 +3,7 @@ import * as path from 'path';
 
 import * as ejs from 'ejs';
 
-import { error, info } from './log';
+import { error, success } from './log';
 
 let flat = 0; // copyDir 函数数量
 let fileCount = 0; // 文件数量
@@ -55,14 +55,12 @@ function copyDir(
                 const parsedPath = path.parse(fullCurrentDir);
                 const pathArgv = parsedPath.dir.split('/');
                 const name = pathArgv.pop() ?? '';
-                fullCurrentDir = path.join(
-                  pathArgv.join('/'),
-                  name,
-                  parsedPath.base.replace('index', name),
-                );
-                p = parsedPath.base.replace('index', name);
+                fullCurrentDir = path.join(pathArgv.join('/'), name, parsedPath.base);
+                p = parsedPath.base;
+                success(`Creating template: ${`${name}/${p}`} Successfully`);
+              } else {
+                success(`Creating template: ${p} Successfully`);
               }
-              info(`Creating template: ${p}`);
               fs.writeFileSync(fullCurrentDir, renderedTemplate);
 
               fileCount--;
@@ -114,7 +112,7 @@ export function copyTemplate(sourcesConfig, name, isTemplate?: boolean) {
         })
         .catch(err => error(err));
     } catch (err) {
-      console.error(`An error occurs, the reason is: ${err}`);
+      error(`An error occurs, the reason is: ${err}`);
     }
   });
 }
