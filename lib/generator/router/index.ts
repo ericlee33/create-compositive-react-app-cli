@@ -4,11 +4,16 @@ export default (generator, options) => {
     'react-router-dom': '^5.2.0',
   };
 
+  const devDependencies = {
+    '@types/react-router-dom': '^5.2.0',
+  };
+
   generator.extendPackage({
     dependencies,
+    devDependencies,
   });
 
-  const fullPath = path.join(__dirname, './template');
+  const fullPath = path.resolve(__dirname, '../../../templates/router');
 
   generator.render({
     fullPath,

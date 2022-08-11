@@ -8,7 +8,7 @@ import Generator from './Generator';
 import getPromptModules from './getPromptModules';
 import PromptModuleAPI from './PromptModuleAPI';
 import createTemplate from './templates/createTemplate';
-import colors from './utils/chalk';
+import { info, log } from './utils';
 import executeCommand from './utils/executeCommand';
 
 async function createApp(name: string) {
@@ -43,20 +43,20 @@ async function createApp(name: string) {
 
   answers.features = ['react', ...answers.features];
 
-  answers.features.forEach(async feature => {
+  for (const feature of answers.features) {
     const func = await import(`./generator/${feature}`);
 
-    func(generator, answers, name);
-  });
+    await func.default(generator, answers, name);
+  }
 
   await generator.generate(answers.start, name);
 
-  colors.yellow(`Start installing dependencies`);
+  info(`Start installing dependencies`);
 
-  await executeCommand('git', ['init'], path.join(process.cwd(), name));
-  await executeCommand('npm', ['install'], path.join(process.cwd(), name));
+  await executeCommand('git', ['init'], path.resolve(process.cwd(), name));
+  await executeCommand('npm', ['install'], path.resolve(process.cwd(), name));
 
-  colors.green(
+  log(
     `\nInstall successfully! Now, you can print \`cd ${name}\` in bash \nthen \`npm run dev\` to start your react project!\n`,
   );
 }

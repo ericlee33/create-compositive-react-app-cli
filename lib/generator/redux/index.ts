@@ -12,7 +12,7 @@ export default generator => {
     dependencies,
   });
 
-  const fullPath = path.join(__dirname, './template');
+  const fullPath = path.resolve(__dirname, '../../../templates/redux');
 
   generator.render({ fullPath });
 };

@@ -1,35 +1,37 @@
-import inquirer from 'inquirer';
 import path from 'path';
-import templatePrompts from './templatePrompts';
+
+import inquirer from 'inquirer';
+
 import { copyTemplate } from '../utils/copyDir';
-import configPath from './config';
+import templatePrompts from './templatePrompts';
 
-const createTemplateInDest = (dirPath: string, name: string) => {
-  const sourceDir = path.join(__dirname, dirPath);
-
+const createTemplateInDest = (dirPath: string, name: string, type) => {
   const sourcesConfig = [
     {
-      fullPath: sourceDir,
+      fullPath: dirPath,
       data: {},
       ejsOptions: {},
     },
   ];
 
-  const currentDirName = path.join('./src', dirPath, name);
+  const currentDirName = `./src/${type === 'page' ? 'routes' : 'components'}/${name}`;
 
   copyTemplate(sourcesConfig, currentDirName, true);
 };
 
 async function createTemplate() {
-  const { viewsPath, componentsPath } = configPath;
+  const configPath = {
+    viewsPath: path.resolve(__dirname, '../../templates/views'),
+    componentsPath: path.resolve(__dirname, '../../templates/components'),
+  };
 
   const answers = await inquirer.prompt(templatePrompts());
   const name = answers.name;
 
   if (answers.type === 'page') {
-    createTemplateInDest(viewsPath, name);
+    createTemplateInDest(configPath.viewsPath, name, answers.type);
   } else {
-    createTemplateInDest(componentsPath, name);
+    createTemplateInDest(configPath.componentsPath, name, answers.type);
   }
 }
 

@@ -11,7 +11,7 @@ const Root = styled.div``;
 const Index: React.FC<IIndexProps> = ({ className, style }) => {
   return (
     <Root className={className} style={style}>
-      {/*  */}
+      Hello, World!
     </Root>
   );
 };
