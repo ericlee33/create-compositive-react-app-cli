@@ -20,8 +20,8 @@ const Login: React.FC<ILoginProps> = ({ className, style }) => {
   return (
     <Root className={className} style={style}>
       <div>
-        You have created templates by create-compositive-react-app-cli, now it's time to start your
-        developing~!
+        You have created templates by create-compositive-react-app-cli successfully, now it's time
+        to start your developing~!
       </div>
       <div style={{ color: 'pink' }}>current page is on ./src/routes/Login/index.tsx</div>
     </Root>
