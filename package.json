@@ -1,6 +1,6 @@
 {
   "name": "create-compositive-react-app-cli",
-  "version": "1.0.9",
+  "version": "2.0.1",
   "description": "Command line interface for React family bucket integrates",
   "main": "index.js",
   "bin": {
